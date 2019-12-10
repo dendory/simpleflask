@@ -12,7 +12,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	if request.method == "POST":
-		cfg['user'] = request.form['id']
+		if "id" in request.form and "pw" in request.form:
+			cfg['user'] = request.form['id']
 
 	return render_template('index.html', cfg=cfg)
 
@@ -23,4 +24,4 @@ def login():
 
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=80)
+	app.run(host='0.0.0.0', port=8080)

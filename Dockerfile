@@ -3,5 +3,5 @@ WORKDIR /usr/share/dendoryflask
 COPY ./requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY ./ ./
-EXPOSE 80
+EXPOSE 8080
 CMD [ "python", "./routes.py" ]

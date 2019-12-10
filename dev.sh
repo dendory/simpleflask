@@ -25,7 +25,7 @@ build()
 	echo -n "Building and running local container... "
 	sudo docker container rm dendoryflask
 	sudo docker build -t dendoryflask .
-	sudo docker run --name dendoryflask -d -p 8080:80 -v `pwd`:/usr/share/dendoryflask --network bridge dendoryflask
+	sudo docker run --name dendoryflask -d -p 8080:8080 -v `pwd`:/usr/share/dendoryflask --network bridge dendoryflask
 	return 0
 }
 
