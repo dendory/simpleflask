@@ -1,8 +1,6 @@
-<html>
-	<head>
-		<title>{{ cfg.title }}</title>
-	</head>
-	<body>
-		<h2>Hello, {{ cfg.user }}!</h2>
-	</body>
-</html>
+{% include 'top.html' %}
+
+<h2>Hello, {{ cfg.user }}!</h2>
+<a class="btn btn-primary" href="/login" role="button">Go to the login page</a>
+
+{% include 'bottom.html' %}
