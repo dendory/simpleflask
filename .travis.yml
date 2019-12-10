@@ -1,4 +1,5 @@
 sudo: required
+language: python
 services:
   - docker
 before_install:
@@ -6,6 +7,6 @@ before_install:
   - docker run -d -p 8080:8080 --name app dendory02/simpleflask
   - docker ps -a
 script:
-  - curl http://localhost:8080
+  - curl -k http://localhost:8080/
 after_script:
   - docker rm -f app
